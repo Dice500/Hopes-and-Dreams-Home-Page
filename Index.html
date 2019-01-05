@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hopes And Dreams</title>
+<link rel="stylesheet" type="text/css" href="Main.css">
+</head>
+<body onload="checkCookie()">
+<center>
+<a href="https://www.google.com"><img src="tumblr_static_6r2th38fqnswwogw408880s4k.gif"></a>
+<br>
+<img src="BOXedit.png">
+<br>
+<div class="row">
+<div class="column">
+<font face="monster friend fore regular" color="white"><h1 id="user"></h1></font>
+</div>
+<div class="column">
+<div id="level">
+<font face="monster friend fore regular" color="white"><h1> LV 1 </h1></font>
+</div>
+</div>
+<div class="column">
+<div id="hp">
+<img src="undertaleheart.png">
+</div>
+</div>
+</table>
+<script>
+function setCookie(cname, cvalue, exdays) {
+		var d = new Date();
+		d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+		var expires = "expires="+d.toUTCString();
+		document.cookie = cname + "cookie_1" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  var name = cname + "cookie_1";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) === 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function checkCookie() {
+  var username = getCookie("username");
+  if (username !== "") {
+   alert("Welcome again " + username);
+  } else {
+    username = prompt("Please enter your name. Capital letters = hearts in holes", "");
+    if (username !== "" && username !== null) {
+      setCookie("username", username, 365);
+    }
+  }
+  document.getElementById("user").innerHTML = username;
+}
+</script>
+<br>
+<div id="links">
+<a href="https://www.youtube.com/feed/subscriptions"><img src="YOUTUBEedit.png"></a>
+<a href="https://www.twitter.com"><img src="TWITTERedit.png"></a>
+<a href="https://www.masterani.me/my-anime"><img src="GOGOANIMEedit.png"></a>
+<a href="http://jisho.org/"><img src="JISHOedit.png"></a>
+</div>
+</center>
+<audio autoplay loop> 
+<source src="Hopes and Dreams Remix.mp3" type="audio/mp3">
+</audio>
+<iframe src="60 seconds of silence (1 minute).mp3" allow="autoplay" style="display:none" id="Song">
+</iframe>
+</body>
+</html>

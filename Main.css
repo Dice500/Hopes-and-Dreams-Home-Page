@@ -1,0 +1,43 @@
+body
+{
+	background-color: black;
+}
+
+h2{
+	
+	color: white;
+	
+	
+}
+
+h1{
+    
+}
+
+.column {
+    float: left;
+    padding: 5px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#user {
+	margin-left: 480px;
+}
+
+#links{
+	margin-top: 75px;
+}
+
+#level{
+	margin-left:25px;
+}
+
+#hp{
+	margin-left:45px;
+	margin-top: 18px;
+}
